@@ -1,0 +1,12 @@
+{% extends 'pools/base.html' %}
+{% block main_content %}
+{% if latest_question%}
+    <ul>
+        {% for question in latest_question %}
+            <li><a href='/pools/{{question.id}}' ><b>{{question.question_text}}</b></a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>no questions</p>
+    {% endif %}
+{% endblock %}
